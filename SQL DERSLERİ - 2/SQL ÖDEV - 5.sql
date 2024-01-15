@@ -1,12 +1,32 @@
-…or create a new repository on the command line
-echo "# Hafta-6" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/r7tk/Hafta-6.git
-git push -u origin main
-…or push an existing repository from the command line
-git remote add origin https://github.com/r7tk/Hafta-6.git
-git branch -M main
-git push -u origin main
+-------------------------------------------
+----------------- ÖDEV 5 ------------------
+-------------------------------------------
+
+-- 1. film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en uzun (length) 5 filmi sıralayınız.
+
+/*
+SELECT title FROM film
+WHERE title LIKE '%n'
+ORDER BY length DESC
+LIMIT 5;
+*/
+
+-- 2.film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız.
+
+/*
+SELECT title FROM film
+WHERE title LIKE '%n'
+ORDER BY length
+LIMIT 5
+OFFSET 5;
+*/
+
+-- 3.customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
+
+/*
+SELECT * FROM costumer
+WHERE store_id = 1
+ORDER BY last_name DESC
+LIMIT 4;
+*/
+
