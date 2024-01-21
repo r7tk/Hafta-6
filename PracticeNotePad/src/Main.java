@@ -11,15 +11,17 @@ public class Main {
             System.out.print("Bir metin girin: ");
             String metin = scanner.nextLine();
 
-            FileWriter fileWriter = new FileWriter("notlar.txt");
+            FileWriter fileWriter = new FileWriter("src/notlar.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
             printWriter.print(metin);
             printWriter.close();
 
-            // Reading from file
-            FileReader fileReader = new FileReader("notlar.txt");
+            FileReader fileReader = new FileReader("src/notlar.txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String okunanMetin = bufferedReader.readLine();
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
             bufferedReader.close();
 
         }catch (Exception e){
